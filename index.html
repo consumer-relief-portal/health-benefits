@@ -49,16 +49,45 @@
     </div>
 
     <script>
-        function processStateParameters() {
-            const urlSearch = new URLSearchParams(window.location.search);
-            let stateToken = urlSearch.get('state');
-            if (stateToken) {
-                stateToken = stateToken.trim().toLowerCase().replace(/\b\w/g, letter => letter.toUpperCase());
-                document.getElementById('dynamicUSState').innerText = stateToken;
-                document.title = "ACA Health Insurance Hotline - " + stateToken;
+        function loadNaturalStateContent() {
+    const urlParams = new URLSearchParams(window.location.search);
+    let state = urlParams.get('state');
+    
+    const statePhrases = {
+        "texas": "Our team helps people across Texas find the best local options. Most regional enrollment deadlines have been extended through November 2026.",
+        "california": "We actively match California residents with verified state programs. This service is fully customized to follow recent CA consumer assistance guidelines.",
+        "florida": "Many people in Florida are checking their eligibility this week. Local agents are standing by to guide you through the process.",
+        "new-york": "If you live in New York, our network can quickly connect you with regional hardship assistance and financial options available in your county right now.",
+        "ohio": "Our hotline is open for Ohio residents looking for clear answers. We make it simple to review your local program options without any hassle.",
+        "georgia": "We are updating records for families living throughout Georgia. Speak with someone today to see what regional relief programs you can secure.",
+        "north-carolina": "Folks in North Carolina have several new options available this season. Our routing system will instantly match you with an available expert in your area.",
+        "michigan": "If you are managing your budget in Michigan, our helpline is a great place to start. We help local residents sort through their choices daily.",
+        "new-jersey": "Our platform offers a direct connection for New Jersey applicants. You can get a complete breakdown of current NJ state benefits in just a few minutes.",
+        "virginia": "We are proud to serve communities across Virginia. Call right now to speak with a friendly specialist who understands the latest regional programs."
+    };
+
+    if (state) {
+        let cleanState = state.trim().toLowerCase();
+        let formattedState = cleanState.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        
+        let stateElement = document.getElementById('dynamicUSState') || document.getElementById('targetState');
+        if (stateElement) {
+            stateElement.innerText = formattedState;
+        }
+        document.title = "Get Help in " + formattedState + " - Official Support Center";
+        
+        if (statePhrases[cleanState]) {
+            let naturalSentence = statePhrases[cleanState];
+            let subTextElement = document.querySelector('.sub-text') || document.querySelector('.main-card p');
+            
+            if (subTextElement) {
+                subTextElement.innerHTML += `<br><br><p style="color:#2d3748; font-size:15px; font-style:italic; background:#f7fafc; padding:15px; border-left:4px solid #3182ce; text-align:left; margin-top:15px;"><strong>Local Update:</strong> ${naturalSentence}</p>`;
             }
         }
-        window.onload = processStateParameters;
+    }
+}
+window.onload = loadNaturalStateContent;
+        
     </script>
 </body>
 </html>
