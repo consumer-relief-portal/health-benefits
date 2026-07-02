@@ -1,0 +1,36 @@
+# Health Benefits Portal - robots.txt
+# Search engine crawler instructions for optimal indexing
+
+# Allow all search engines
+User-agent: *
+Allow: /
+Allow: *.html
+Allow: *.xml
+Allow: /index.html
+Allow: /sitemap.xml
+
+# Disallow nothing - full indexing desired
+Disallow:
+
+# Specific optimizations
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+# Sitemap location
+Sitemap: https://consumer-relief-portal.github.io/health-benefits/sitemap.xml
+
+# Response time
+Request-rate: 30/1m
