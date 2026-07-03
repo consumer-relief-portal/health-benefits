@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="5PBzCzXjwXvOuw0ncr1u2c6To99ae73xqjRhAMSWzcw" />
+    <title>National Health Benefits Registry - 2026 Enrollment</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f7fafc; margin: 0; padding: 0; text-align: center; color: #2d3748; }
+        .top-notice { background-color: #1a365d; color: #ffffff; padding: 12px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 3px solid #2b6cb0; }
+        .wrapper { max-width: 500px; margin: 35px auto; background: #ffffff; padding: 40px 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-top: 6px solid #3182ce; }
+        h1 { font-size: 28px; color: #1a202c; margin: 0 0 12px 0; line-height: 1.3; font-weight: 800; }
+        .state-banner { color: #dd6b20; font-weight: bold; text-transform: uppercase; display: inline-block; border-bottom: 2px dashed #dd6b20; }
+        .sub-text { font-size: 16px; color: #4a5568; line-height: 1.6; margin-bottom: 30px; font-weight: 400; }
+        .call-container { background-color: #ebf8ff; border: 2px dashed #bee3f8; padding: 25px 20px; border-radius: 12px; margin-bottom: 25px; }
+        .live-status { display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #2f855a; margin-bottom: 12px; text-transform: uppercase; }
+        .pulse-dot { height: 10px; width: 10px; background-color: #48bb78; border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.7); animation: pulse 2s infinite; }
+        .click-to-call { display: block; background: linear-gradient(135deg, #38a169 0%, #2f855a 100%); color: #ffffff; padding: 20px; font-size: 24px; font-weight: bold; text-decoration: none; border-radius: 12px; transition: all 0.3s ease; }
+        .click-to-call:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(56,161,105,0.5); }
+        .click-to-call span { display: block; font-size: 14px; font-weight: 400; margin-top: 6px; opacity: 0.95; letter-spacing: 0.5px; }
+        .legal-notice { font-size: 11px; color: #a0aec0; margin-top: 35px; border-top: 1px solid #e2e8f0; padding-top: 20px; text-align: left; line-height: 1.6; }
+        @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(72, 187, 120, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(72, 187, 120, 0); } }
+    </style>
+</head>
+<body>
+
+    <div class="top-notice">🇺🇸 National Health Benefit Enrollment Assistance</div>
+
+    <div class="wrapper">
+        <h1>Under $10/Mo Health Plans For <br><span id="dynamicUSState" class="state-banner">USA</span> Residents</h1>
+        <p class="sub-text">Check your qualification status for zero-dollar premiums, expanded coverage, and premium tax credits. Speak with a licensed enrollment agent immediately.</p>
+        
+        <div class="call-container">
+            <div class="live-status">
+                <span class="pulse-dot"></span> Live Verification Agents Available
+            </div>
+            
+            <a href="tel:8569007834" class="click-to-call">
+                📞 Tap To Call Agent
+                <span>Toll-Free Helpline: 8569007834</span>
+            </a>
+        </div>
+
+        <div class="legal-notice">
+            <strong>Compliance Disclaimer:</strong> This portal serves as an independent connecting marketplace and is not affiliated with, endorsed by, or connected to HealthCare.gov or any state government agency.
+            <br><br>
+            🔒 <em>TrustedForm Verified Inbound Web Session</em> | Privacy Policy | Terms of Service
+        </div>
+    </div>
+
+    <script>
+        function loadNaturalStateContent() {
+            // Extract state from URL path or query parameters
+            const pathname = window.location.pathname;
+            const searchParams = new URLSearchParams(window.location.search);
+            let state = searchParams.get('state');
+            
+            // Try to extract state from pathname if not in query params
+            if (!state) {
+                const pathParts = pathname.split('/').filter(p => p);
+                if (pathParts.length > 0) {
+                    state = pathParts[pathParts.length - 1];
+                }
+            }
+            
+            const statePhrases = {
+                "texas": "Our team helps people across Texas find the best local options. Most regional enrollment deadlines have been extended through November 2026.",
+                "california": "We actively match California residents with verified state programs. This service is fully customized to follow recent CA consumer assistance guidelines.",
+                "florida": "Many people in Florida are checking their eligibility this week. Local agents are standing by to guide you through the process.",
+                "new-york": "If you live in New York, our network can quickly connect you with regional hardship assistance and financial options available in your county right now.",
+                "ohio": "Our hotline is open for Ohio residents looking for clear answers. We make it simple to review your local program options without any hassle.",
+                "georgia": "We are updating records for families living throughout Georgia. Speak with someone today to see what regional relief programs you can secure.",
+                "north-carolina": "Folks in North Carolina have several new options available this season. Our routing system will instantly match you with an available expert in your area.",
+                "michigan": "If you are managing your budget in Michigan, our helpline is a great place to start. We help local residents sort through their choices daily.",
+                "new-jersey": "Our platform offers a direct connection for New Jersey applicants. You can get a complete breakdown of current NJ state benefits in just a few minutes.",
+                "virginia": "We are proud to serve communities across Virginia. Call right now to speak with a friendly specialist who understands the latest regional programs.",
+                "pennsylvania": "Pennsylvania residents have access to specialized health programs. Our team is ready to help you explore all available options.",
+                "illinois": "Chicago and Illinois area support available. Connect with local specialists who understand regional programs.",
+                "washington": "Seattle and Washington state assistance ready. Speak with experts familiar with WA health benefits.",
+                "arizona": "Arizona residents can access tailored health plans. Call now to learn your options.",
+                "massachusetts": "Boston and Massachusetts programs available. Licensed enrollment agents standing by.",
+                "tennessee": "Tennessee residents welcome. Our team helps with state-specific health solutions.",
+                "indiana": "Indiana support network ready. Connect with local experts now.",
+                "maryland": "Maryland residents can find qualified assistance. State-specific programs available.",
+                "missouri": "Missouri health plans explained. Call for personalized guidance.",
+                "wisconsin": "Wisconsin residents assistance available. Expert local guidance ready.",
+                "colorado": "Colorado health benefit programs accessible. Call now for consultation.",
+                "minnesota": "Minnesota residents supported. State-specific solutions available.",
+                "south-carolina": "South Carolina programs ready. Licensed agents standing by.",
+                "alabama": "Alabama residents can find coverage. State programs explained by experts.",
+                "louisiana": "Louisiana support network ready. Local expert guidance available."
+            };
+
+            if (state) {
+                let cleanState = state.trim().toLowerCase();
+                let formattedState = cleanState.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+                
+                let stateElement = document.getElementById('dynamicUSState');
+                if (stateElement) {
+                    stateElement.innerText = formattedState;
+                }
+                document.title = "Get Help in " + formattedState + " - Official Support Center";
+                
+                if (statePhrases[cleanState]) {
+                    let naturalSentence = statePhrases[cleanState];
+                    let subTextElement = document.querySelector('.sub-text');
+                    
+                    if (subTextElement) {
+                        subTextElement.innerHTML += `<br><br><p style="color:#2d3748; font-size:15px; font-style:italic; background:#f7fafc; padding:15px; border-left:4px solid #3182ce; text-align:left; margin:15px 0 0 0;">` + naturalSentence + `</p>`;
+                    }
+                }
+            }
+        }
+        window.onload = loadNaturalStateContent;
+    </script>
+</body>
+</html>
